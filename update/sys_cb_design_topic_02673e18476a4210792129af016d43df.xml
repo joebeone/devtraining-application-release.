@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cb_design_topic">
+    <sys_cb_design_topic action="INSERT_OR_UPDATE">
+        <compiled_topic display_value="Test">c6677294476a4210792129af016d43cf</compiled_topic>
+        <design_definition>{"type":"FlowTopic","triggers":[{"type":"Trigger","name":"42dab47ba37547fba600c9e460aecbb2","triggerType":"request","applicability":{"type":"Applicability","mode":"script","value":"true"},"id":"42dab47ba37547fba600c9e460aecbb2"}],"goals":[{"name":"primary","trigger_id":"42dab47ba37547fba600c9e460aecbb2","nodes":[{"type":"StartGoal","goal_id":"primary","greeting_msg":{"type":"String","mode":"string","value":"gs.getMessageLang(\"{0}This is a test\", vaContext.getRequesterLang(), [vaInputs.user.getDisplayValue()])"},"id":"308af6fae3144e66b4f6b49d6645b8d6","name":"Start","expert_mode":false},{"type":"TerminateGoal","goal_id":"primary","confirmation_msg":{"type":"String","mode":"string","value":""},"id":"298641c5c579460581e7f2d7dfc9788c","name":"End","expert_mode":false},{"type":"ChoiceInputPrompt","expression_mode":"simple","metadataScript":"","cardName":"","cardFields":[],"id":"cb37f56f013c4e88be568dd32c94a4d1","name":"StaticChoice","goal_id":"primary","applicability":{"type":"Applicability","mode":"script","value":"true"},"expert_mode":false,"variable_id":"838b88e13c6d4e778728e6ec850fbf77","message":{"type":"String","mode":"string","value":"gs.getMessageLang(\"va:topic:8545fed0476a4210792129af016d43e7:node:cb37f56f013c4e88be568dd32c94a4d1:field:Message {0}\", vaContext.getRequesterLang(), [vaInputs.user.first_name.getDisplayValue()])"},"request_feedback":false,"skippable":{"type":"Applicability","mode":"script","value":"false"},"skipreprompt":{"type":"Applicability","mode":"script","value":"false"},"nlu_entity_binding":{"type":"NLUEntityBinding","allow_text_input":false,"use_confirmation_prompt":true},"description":""}],"edges":[{"type":"Edge","source_node_id":"cb37f56f013c4e88be568dd32c94a4d1","target_node_id":"298641c5c579460581e7f2d7dfc9788c","id":"958f0fb406ef43d8a5f51f42218ec216"},{"type":"Edge","source_node_id":"308af6fae3144e66b4f6b49d6645b8d6","target_node_id":"cb37f56f013c4e88be568dd32c94a4d1","id":"5ace08a407134ce6ba366d76da9c80a6"}],"id":"primary"}],"script_variables":[],"glide_variables":[{"type":"Reference","table":"sys_user","id":"current-user","name":"user","formatType":"text","secure":false,"sensitive":false,"list":false},{"type":"Choice","choices":[{"name":"Your Printer","element":"bar"},{"name":"Your Computer","element":"bar2"}],"id":"838b88e13c6d4e778728e6ec850fbf77","name":"staticchoice","formatType":"text","secure":false,"sensitive":false,"list":false,"label":"StaticChoice"}],"applicability":{"type":"Applicability","mode":"script","value":"true"},"roles":[],"scope":"6ead8e780f603200cd674f8ce1050ed1","domain":"global","topic_type":"STANDARD","channels":[],"dialog_acts_enabled":false,"id":"8545fed0476a4210792129af016d43e7","name":"Test","key_phrases":["Test"],"nlu_provider":"","nlu_model":"","nlu_model_label":"","nlu_intent":"","nlu_intent_label":"","flexible_conversation_switching":false,"autopilot_topic":false,"design_categories":[],"triggerable_by_notification":false,"description":"test","model_type":"nlu_keyword","foundational":false,"modify_confirmation_enabled":false,"context_profiles":[],"library":false,"readOnly":false,"nluMapping":"[]"}</design_definition>
+        <design_topic_id>8545fed0476a4210792129af016d43e7</design_topic_id>
+        <graph>{
+  "graph_api_version": "1.0.61",
+  "goals": {
+    "primary": {
+      "id": "primary",
+      "trigger": {
+        "type": "primary"
+      },
+      "name": "primary",
+      "applicability": "",
+      "description": "",
+      "nodes": {
+        "308af6fae3144e66b4f6b49d6645b8d6": {
+          "id": "308af6fae3144e66b4f6b49d6645b8d6",
+          "stepType": "Start",
+          "name": "Start",
+          "greetingResponse": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": ""
+                  },
+                  {
+                    "type": "datapill",
+                    "dataPill": {
+                      "value": "{{vaInputs.user}}",
+                      "displayValue": "Input Variables➛User"
+                    },
+                    "children": [
+                      {
+                        "text": ""
+                      }
+                    ]
+                  },
+                  {
+                    "text": "This is a test"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          }
+        },
+        "298641c5c579460581e7f2d7dfc9788c": {
+          "id": "298641c5c579460581e7f2d7dfc9788c",
+          "stepType": "TerminateGoal",
+          "name": "End",
+          "confirmationMessage": {
+            "mode": "simple",
+            "value": ""
+          }
+        },
+        "cb37f56f013c4e88be568dd32c94a4d1": {
+          "name": "StaticChoice",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Hello "
+                  },
+                  {
+                    "type": "datapill",
+                    "dataPill": {
+                      "value": "{{vaInputs.user.first_name}}",
+                      "displayValue": "Input Variables➛User➛First name"
+                    },
+                    "children": [
+                      {
+                        "text": ""
+                      }
+                    ]
+                  },
+                  {
+                    "text": ""
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": ""
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "what can I help you with today? "
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "skipReprompt": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "838b88e13c6d4e778728e6ec850fbf77",
+          "detailDescription": "",
+          "id": "cb37f56f013c4e88be568dd32c94a4d1",
+          "stepType": "ChoicePrompt",
+          "hasCardHeader": false,
+          "cardMetadata": {
+            "mode": "card",
+            "metadataScript": "",
+            "cardTemplate": "",
+            "cardFields": {},
+            "cardDefinition": {}
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        }
+      },
+      "edges": [
+        {
+          "id": "958f0fb406ef43d8a5f51f42218ec216",
+          "edgeType": "Edge",
+          "source": "cb37f56f013c4e88be568dd32c94a4d1",
+          "target": "298641c5c579460581e7f2d7dfc9788c",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "5ace08a407134ce6ba366d76da9c80a6",
+          "edgeType": "Edge",
+          "source": "308af6fae3144e66b4f6b49d6645b8d6",
+          "target": "cb37f56f013c4e88be568dd32c94a4d1",
+          "sourcePort": "",
+          "targetPort": ""
+        }
+      ]
+    }
+  },
+  "variables": {
+    "current-user": {
+      "category": "vaInputs",
+      "id": "current-user",
+      "label": "User",
+      "name": "user",
+      "table": "sys_user",
+      "varType": "reference"
+    },
+    "838b88e13c6d4e778728e6ec850fbf77": {
+      "id": "838b88e13c6d4e778728e6ec850fbf77",
+      "name": "staticchoice",
+      "label": "StaticChoice",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "Your Printer",
+          "value": "bar"
+        },
+        {
+          "label": "Your Computer",
+          "value": "bar2"
+        }
+      ],
+      "category": "vaInputs",
+      "nodeId": "cb37f56f013c4e88be568dd32c94a4d1",
+      "isHidden": false
+    }
+  }
+}</graph>
+        <name>Test</name>
+        <sys_class_name>sys_cb_design_topic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-29 19:04:27</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>02673e18476a4210792129af016d43df</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>FlowTopic</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_cb_design_topic_02673e18476a4210792129af016d43df</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-29 19:04:27</sys_updated_on>
+        <type>FlowTopic</type>
+    </sys_cb_design_topic>
+</record_update>

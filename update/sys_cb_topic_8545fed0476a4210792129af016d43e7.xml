@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cb_topic">
+    <sys_cb_topic action="INSERT_OR_UPDATE">
+        <applicability/>
+        <applicability_mode>query</applicability_mode>
+        <autopilot_topic>false</autopilot_topic>
+        <category/>
+        <channels/>
+        <connect_queue/>
+        <context_profiles/>
+        <description>test</description>
+        <dialog_acts_enabled>false</dialog_acts_enabled>
+        <expose_on_palette>false</expose_on_palette>
+        <flexible_conversation_switching>false</flexible_conversation_switching>
+        <foundational>false</foundational>
+        <graph>{
+  "graph_api_version": "1.0.61",
+  "goals": {
+    "primary": {
+      "id": "primary",
+      "trigger": {
+        "type": "primary"
+      },
+      "name": "primary",
+      "applicability": "",
+      "description": "",
+      "nodes": {
+        "308af6fae3144e66b4f6b49d6645b8d6": {
+          "id": "308af6fae3144e66b4f6b49d6645b8d6",
+          "stepType": "Start",
+          "name": "Start",
+          "greetingResponse": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": ""
+                  },
+                  {
+                    "type": "datapill",
+                    "dataPill": {
+                      "value": "{{vaInputs.user}}",
+                      "displayValue": "Input Variables➛User"
+                    },
+                    "children": [
+                      {
+                        "text": ""
+                      }
+                    ]
+                  },
+                  {
+                    "text": "This is a test"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          }
+        },
+        "298641c5c579460581e7f2d7dfc9788c": {
+          "id": "298641c5c579460581e7f2d7dfc9788c",
+          "stepType": "TerminateGoal",
+          "name": "End",
+          "confirmationMessage": {
+            "mode": "simple",
+            "value": ""
+          }
+        },
+        "cb37f56f013c4e88be568dd32c94a4d1": {
+          "name": "StaticChoice",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Hello "
+                  },
+                  {
+                    "type": "datapill",
+                    "dataPill": {
+                      "value": "{{vaInputs.user.first_name}}",
+                      "displayValue": "Input Variables➛User➛First name"
+                    },
+                    "children": [
+                      {
+                        "text": ""
+                      }
+                    ]
+                  },
+                  {
+                    "text": ""
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": ""
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "what can I help you with today? "
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "skipReprompt": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "838b88e13c6d4e778728e6ec850fbf77",
+          "detailDescription": "",
+          "id": "cb37f56f013c4e88be568dd32c94a4d1",
+          "stepType": "ChoicePrompt",
+          "hasCardHeader": false,
+          "cardMetadata": {
+            "mode": "card",
+            "metadataScript": "",
+            "cardTemplate": "",
+            "cardFields": {},
+            "cardDefinition": {}
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        },
+        "d08e9702092f4895a7ea62f9789e8afa": {
+          "id": "d08e9702092f4895a7ea62f9789e8afa",
+          "stepType": "TextOutput",
+          "name": "Understand",
+          "secure": false,
+          "value": [
+            {
+              "value": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "Okay, let me see if I can help you with your  "
+                    },
+                    {
+                      "type": "datapill",
+                      "dataPill": {
+                        "value": "{{vaInputs.staticchoice}}",
+                        "displayValue": "Input Variables➛StaticChoice"
+                      },
+                      "children": [
+                        {
+                          "text": ""
+                        }
+                      ],
+                      "bold": true
+                    },
+                    {
+                      "text": " "
+                    }
+                  ]
+                }
+              ],
+              "mode": "simple",
+              "_key": "43e512474fd446b1a8a020386ad97231"
+            }
+          ],
+          "requestFeedback": true,
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        }
+      },
+      "edges": [
+        {
+          "id": "5ace08a407134ce6ba366d76da9c80a6",
+          "edgeType": "Edge",
+          "source": "308af6fae3144e66b4f6b49d6645b8d6",
+          "target": "cb37f56f013c4e88be568dd32c94a4d1",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "958f0fb406ef43d8a5f51f42218ec216",
+          "edgeType": "Edge",
+          "source": "cb37f56f013c4e88be568dd32c94a4d1",
+          "target": "d08e9702092f4895a7ea62f9789e8afa",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "6c51f41d84424d76afbb980814c00a9d",
+          "edgeType": "Edge",
+          "source": "d08e9702092f4895a7ea62f9789e8afa",
+          "target": "298641c5c579460581e7f2d7dfc9788c",
+          "sourcePort": "",
+          "targetPort": ""
+        }
+      ]
+    }
+  },
+  "variables": {
+    "current-user": {
+      "category": "vaInputs",
+      "id": "current-user",
+      "label": "User",
+      "name": "user",
+      "table": "sys_user",
+      "varType": "reference"
+    },
+    "838b88e13c6d4e778728e6ec850fbf77": {
+      "id": "838b88e13c6d4e778728e6ec850fbf77",
+      "name": "staticchoice",
+      "label": "StaticChoice",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "Your Printer",
+          "value": "bar"
+        },
+        {
+          "label": "Your Computer",
+          "value": "bar2"
+        }
+      ],
+      "category": "vaInputs",
+      "nodeId": "cb37f56f013c4e88be568dd32c94a4d1",
+      "isHidden": false
+    }
+  }
+}</graph>
+        <key_phrases>Test</key_phrases>
+        <library>false</library>
+        <live_agent>false</live_agent>
+        <model_type>nlu_keyword</model_type>
+        <modify_confirmation_enabled>false</modify_confirmation_enabled>
+        <name>Test</name>
+        <nlu_intent/>
+        <nlu_intent_label/>
+        <nlu_model/>
+        <nlu_model_label/>
+        <nlu_provider/>
+        <palette_label/>
+        <roles/>
+        <root_topic_id/>
+        <secure_custom_input_control>false</secure_custom_input_control>
+        <source_topic_id/>
+        <sys_class_name>sys_cb_topic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-29 18:55:06</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>8545fed0476a4210792129af016d43e7</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Test</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_cb_topic_8545fed0476a4210792129af016d43e7</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-29 19:09:27</sys_updated_on>
+        <triggerable_by_notification>false</triggerable_by_notification>
+        <type>STANDARD</type>
+    </sys_cb_topic>
+    <sys_translated_text action="delete_multiple" query="documentkey=8545fed0476a4210792129af016d43e7"/>
+</record_update>
